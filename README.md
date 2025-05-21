@@ -8,3 +8,5 @@ npm install -D tailwindcss@3 postcss autoprefixer
  npm install react-icons --save
 
  npm install @gsap/react gsap
+
+ npm i react-use
