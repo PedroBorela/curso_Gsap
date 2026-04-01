@@ -1,17 +1,30 @@
+import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+
+const links = [
+    {href: 'https://discord.com', icon: <FaDiscord/>},
+    {href: 'https://instagram.com', icon: <FaInstagram/>},
+    {href: 'https://linkedIn.com', icon: <FaLinkedin/>},
+    {href: 'https://github.com', icon: <FaGithub/>},
+]
+
 const Footer = () => {
     return(
-        <footer className="min-h-[10vh] w-screen bg-black text-blue-50">
-            <div className="flex size-full flex-col items-center py-10 pb-24">
-                <p className="font-general text-sm uppercase md:text-[10px]">Entre em contato</p>
-                <div className="relative size-full">
-                    <h2 className="mt-5 pointer-events-none mix-blend-difference relative z-10">Fale conosco</h2>
-                    <form className="mt-5">
-                        <input type="text" placeholder="Seu nome" className="mb-4 p-2 rounded-md" />
-                        <input type="email" placeholder="Seu email" className="mb-4 p-2 rounded-md" />
-                        <textarea placeholder="Sua mensagem" className="mb-4 p-2 rounded-md" />
-                        <button type="submit" className="mt-5 bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200">Enviar</button>
-                    </form>
-                </div>
+        <footer className=" w-screen bg-violet-300 py-4 text-black">
+            <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
+                <p className="text-center text-sm font-light md:text-left">
+                    &copy; Pedro 2025, Todos os direitos reservados.
+                </p>
+            
+            <div className="flex justify-center gap-4 md:justify-start">
+                {links.map((link,index)=>(
+                    <a key={index} href={link.href} target="_blank" rel="noopener noreferrer" className="text-black transition-colors duration-500 ease-in-out hover:text-white">
+                        {link.icon}
+                    </a>
+                ))}
+            </div>
+                <a href="#privacy-policy" className="text-center text-sm font-light hover:underline md:text-right">
+                    Política de privacidade
+                </a>
             </div>
         </footer>
     )

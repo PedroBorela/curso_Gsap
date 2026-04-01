@@ -113,7 +113,7 @@ const Hero = () => {
 
                     <video
                         src={getVideoSrc(indexAtual === totalVideos - 1 ? 1 : indexAtual)}
-                        // autoPlay
+                        autoPlay
                         loop
                         muted
                         className="absolute left-0 top-0 size-full object-cover object-center"

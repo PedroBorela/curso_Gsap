@@ -65,7 +65,11 @@ const Story = () => {
                 </div>
                 <div className="-mt-80 flex w-full justify-center md:-mt-80 md:me-44 md:justify-end">
                     <div className="flex h-full w-fit flex-col items-center md:items-start">
-                        <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque debitis autem reiciendis veniam, optio asperiores assumenda veritatis! Minima, reprehenderit harum ipsa rerum officiis soluta sed animi quo quos fuga magni?
+                        <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
+The Open IP Universe
+The story of
+a hidden realm
+Where realms converge, lies Zentry and the boundless pillar. Discover its secrets and shape your fate amidst infinite opportunities.
 
                         </p>
                         <Button 

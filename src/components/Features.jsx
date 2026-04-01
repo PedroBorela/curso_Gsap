@@ -2,13 +2,33 @@ import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti"
 
 const BentoCard = ({ src, title, description }) => {
+    const videoRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+    };
+
     return (
-        <div className="relative size-full">
+        <div 
+            className="relative size-full"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <video
+                ref={videoRef}
                 src={src}
                 loop
                 muted
-                autoPlay
+                playsInline
                 className="absolute left-0 top-0 size-full object-cover object-center"
             />
             <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
@@ -32,9 +52,9 @@ const BentoTilt = ({ children, className = '' }) => {
         const {left, top, width, height} = itemRef.current.getBoundingClientRect();
         const relativeX = (e.clientX-left ) / width;
         const relativeY = (e.clientY-top ) / height;
-        const tiltX = (relativeY - 0.5) * 10;
-        const tiltY = (relativeX - 0.5) * -10;
-        const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) rotateY(${tiltY}deg) scale3d(0.98, 0.98, 0.98)`;
+        const tiltX = (relativeY - 0.5) * 5;
+        const tiltY = (relativeX - 0.5) * -5;
+        const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) rotateY(${tiltY}deg) scale3d(0.97, 0.97, 0.97)`;
         setTransformStyle(newTransform);
 
     }
@@ -65,7 +85,7 @@ const Features = () => {
                 </div>
                 <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
                     <BentoCard src="/videos/feature-1.mp4"
-                        title={<>radi<b>n</b></>}
+                        title={<>radia<b>n</b>t</>}
                         description="Uma plataforma cruzada de apps de metagame, tornando suas atividade através de jogos Web2 e Web3 em uma aventura recompensadora"
                         isComingSoon
                     />
